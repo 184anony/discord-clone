@@ -1,11 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Sidebar from './components/sidebar/Sidebar';
 
 function App() {
   return (
     <div className="App">
-      <p>184 test</p>
+    {/* sidebar */}
+    <Sidebar />
+
+    {/* home */}
     </div>
   );
 }

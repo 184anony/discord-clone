@@ -9,11 +9,11 @@ import ChatMessage from "./ChatMessage";
 import { useAppSelector } from "../../app/hooks";
 
 function Chat() {
-    const channelName = useAppSelector((state) => state.channelName);
+    const channelName = useAppSelector((state) => state.channel.channelName);
     return (
         <div className="chat">
             {/* chatHeader */}
-            <ChatHeader />
+            <ChatHeader channelName={channelName} />
             {/* chatMessage */}
             <div className="chatMessage">
                 <ChatMessage />

@@ -67,7 +67,7 @@ function Chat() {
         //channelsコレクションの中にあるmessagesコレクションの中にメッセージ情報を入れる
         const collectionRef: CollectionReference<DocumentData> = collection(
             db,
-            "channles",
+            "channels",
             String(channelId),
             "messages"
         );
@@ -76,7 +76,7 @@ function Chat() {
             collectionRef,
             {
                 message: inputText,
-                timestamp: serverTimestamp,
+                timestamp: serverTimestamp(),
                 user: user,
             }
         );

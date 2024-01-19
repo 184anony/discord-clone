@@ -18,7 +18,6 @@ import {
     serverTimestamp,
 } from "firebase/firestore";
 import { db } from "../../firebase";
-import { StringLiteral } from "typescript";
 
 interface Messages {
     timestamp: Timestamp;
@@ -27,7 +26,7 @@ interface Messages {
         uid: string;
         photo: string;
         email: string;
-        displayName: String;
+        displayName: string;
     };
 }
 
@@ -87,10 +86,14 @@ function Chat() {
             <ChatHeader channelName={channelName} />
             {/* chatMessage */}
             <div className="chatMessage">
-                <ChatMessage />
-                <ChatMessage />
-                <ChatMessage />
-                <ChatMessage />
+                {messages.map((message, index) => (
+                    <ChatMessage
+                        key={index}
+                        message={message.message}
+                        timestamp={message.timestamp}
+                        user={message.user}
+                    />
+                ))}
             </div>
             {/* chatInput */}
             <div className="chatInput">

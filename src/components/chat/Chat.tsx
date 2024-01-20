@@ -86,6 +86,7 @@ function Chat() {
                 user: user,
             }
         );
+        setInputText("");
     };
     return (
         <div className="chat">
@@ -112,6 +113,7 @@ function Chat() {
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                             setInputText(e.target.value)
                         }
+                        value={inputText}
                     />
                     <button
                         type="submit"

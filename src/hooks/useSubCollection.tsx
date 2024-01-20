@@ -37,7 +37,7 @@ const useSubCollection = (
 
         const collectionRefOrderBy = query(
             collectionRef,
-            orderBy("timestamp", "desc")
+            orderBy("timestamp", "asc")
         );
 
         onSnapshot(collectionRefOrderBy, (snapshot) => {
